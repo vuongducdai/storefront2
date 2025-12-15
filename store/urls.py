@@ -6,4 +6,7 @@ router = SimpleRouter()
 router.register(r'products', views.ProductViewSet)
 router.register(r'collections', views.CollectionViewSet)
 
-urlpatterns = router.urls
+reviews_router = router.NestedSimpleRouter(router, r'products', lookup_value='product')
+reviews_router.register(r'reviews', views.ReviewViewSet)
+
+urlpatterns = router.urls + reviews_router.urls
