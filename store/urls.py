@@ -6,4 +6,4 @@ router = SimpleRouter()
 router.register(r'products', views.ProductViewSet)
 router.register(r'collections', views.CollectionViewSet)
 
-urlpatterns = router
+urlpatterns = router.urls
